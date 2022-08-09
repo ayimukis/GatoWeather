@@ -7,7 +7,7 @@ import {Fontisto} from '@expo/vector-icons';
 
 const {width: SCREEN_WIDTH} = Dimensions.get("window");
 
-const API_KEY = "6391c146865344b5706499578483b822";
+const API_KEY = process.env.API_KEY;
 
 const icons = {
     Clouds: "cloudy",
@@ -39,6 +39,7 @@ export default function App() {
         setDays(json.daily);
     }
     useEffect(() => {
+        console.log(API_KEY)
         ask();
     }, [])
     return (
